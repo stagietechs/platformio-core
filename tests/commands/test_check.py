@@ -541,7 +541,7 @@ int main() {
     ):
         for tool in ("cppcheck", "clangtidy", "pvs-studio"):
             tmpdir.join("platformio.ini").write(config % (framework, tool))
-            result = clirunner.invoke(cmd_check, ["--project-dir", str(tmpdir)])
+            result = clirunner.invoke(cmd_check, ["--project-dir", str(tmpdir), "-v"])
             validate_cliresult(result)
             defects = sum(count_defects(result.output))
             assert defects > 0, "Failed %s with %s" % (
