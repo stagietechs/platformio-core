@@ -103,7 +103,7 @@ class CppcheckCheckTool(CheckToolBase):
         return DefectItem(**args)
 
     def configure_command(self, language, src_file):  # pylint: disable=arguments-differ
-        tool_path = os.path.join(self.get_tool_dir("tool-cppcheck"), "cppcheck")
+        tool_path = os.path.join(self.get_tool_dir("tool-cppcheck"), "bin", "cppcheck")
 
         cmd = [
             tool_path,
